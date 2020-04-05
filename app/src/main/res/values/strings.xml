@@ -1,3 +1,10 @@
 <resources>
+    <!-- App Resources -->
     <string name="app_name">Quizer</string>
+
+    <!-- Main Menu Strings -->
+    <string name="to_quiz">Quiz</string>
+    <string name="to_add_questions">Add Questions</string>
+
+
 </resources>
