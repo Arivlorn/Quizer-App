@@ -1,9 +1,14 @@
 package edu.andrews.cptr252.aisensee.quizer;
 
+import java.util.UUID;
+
 /**
  * Model for a true/false question.
  */
 public class Question {
+
+    /** Unique ID for question **/
+    private UUID mID;
 
     /** Question */
     private String mQuestion;
@@ -17,11 +22,18 @@ public class Question {
      * @param answer Resource id for question answer (true/false).
      */
     public Question(String question, boolean answer) {
+        mID = UUID.randomUUID();    // a constructor
         mQuestion = question;
         mAnswer = answer;
     }
 
     // Getters & Setters
+
+    /**
+     * Returns the ID
+     * @return ID
+     */
+    public UUID getID() { return mID; }
 
     /**
      * Returns the question.
