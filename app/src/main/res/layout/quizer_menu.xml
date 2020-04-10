@@ -4,13 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".QuizerMainMenuActivity">
+    tools:context=".QuizerActivity">
 
     <Button
         android:id="@+id/quiz_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:onClick="quizButton"
         android:soundEffectsEnabled="false"
         android:text="@string/to_quiz"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
@@ -23,7 +22,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
         android:layout_marginEnd="25dp"
-        android:onClick="addQuestionsButton"
         android:soundEffectsEnabled="false"
         android:text="@string/to_add_questions"
         app:layout_constraintEnd_toEndOf="parent"
