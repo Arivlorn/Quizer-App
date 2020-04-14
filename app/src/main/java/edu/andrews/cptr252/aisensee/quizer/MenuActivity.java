@@ -9,7 +9,7 @@ import android.view.View;
 /**
  * The control layer for the main menu of the app.
  */
-public class QuizerMainMenuActivity extends AppCompatActivity {
+public class MenuActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

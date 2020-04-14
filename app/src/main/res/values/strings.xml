@@ -6,5 +6,11 @@
     <string name="to_quiz">Quiz</string>
     <string name="to_add_questions">Add Questions</string>
 
+    <!-- Question List Strings -->
+    <string name="question_list_label">Questions</string>
+
+    <!-- Questions Details Strings -->
+    <string name="title_hint">Enter your question here.</string>
+
 
 </resources>

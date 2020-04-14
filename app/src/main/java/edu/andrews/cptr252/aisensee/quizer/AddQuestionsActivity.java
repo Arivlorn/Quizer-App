@@ -1,14 +1,14 @@
 package edu.andrews.cptr252.aisensee.quizer;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
 
-public class AddQuestionsActivity extends AppCompatActivity {
+public class AddQuestionsActivity extends SingleFragmentActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_questions);
+    protected Fragment createFragment() {
+        return new QuestionListFragment();
     }
 }

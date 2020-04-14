@@ -11,7 +11,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".QuizActivity"></activity>
         <activity android:name=".AddQuestionsActivity" />
-        <activity android:name=".QuizerMainMenuActivity">
+        <activity android:name=".MenuActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

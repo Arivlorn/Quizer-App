@@ -17,7 +17,7 @@ public abstract class SingleFragmentActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_fragment); // creates a fragment with our frame layout as the parent.
+        setContentView(R.layout.single_fragment_activity); // creates a fragment with our frame layout as the parent.
 
         FragmentManager fragmentManager = getSupportFragmentManager();
         Fragment fragment = fragmentManager.findFragmentById(R.id.fragment_container);
