@@ -23,17 +23,29 @@ public class QuestionList {
     private QuestionList(Context appContext) {
         mAppContext = appContext;
         mQuestions = new ArrayList<>();
+
+        // populates list with 2 fake questions.
+        Question question1 = new Question();
+        question1.setQuestion("First Bullshit Question");
+        mQuestions.add(question1);
+        Question question2 = new Question();
+        question2.setQuestion("Second Bullshit Question");
+        mQuestions.add(question2);
+
+
         // populates our list with 100 fake questions
-        for (int i = 0; i < 100; i++) {
-            Question question = new Question("Test Question #" + i, true);
+        /*for (int i = 0; i < 100; i++) {
+            Question question = new Question();
+            question.setQuestion("Test Question");
+            question.setAnswer(true);
             mQuestions.add(question);
-        }
+        }*/
     }
 
     /**
      * Return one and only instance of the question list.
      * If it does not exist, this method creates it.
-     * TODO: Add @param c to eventually be the Application context (See BugList.java)
+     * @param c to eventually be the Application context (See BugList.java)
      * @return Reference to the question list.
      */
     public static QuestionList getInstance(Context c) {
@@ -46,12 +58,12 @@ public class QuestionList {
     /**
      * Add a question to the list.
      * @param q the question to add.
-     *
+     */
     public void addQuestion(Question q) {
-        //TODO: finish
+
+        //
 
     }
-    */
 
     /**
      * Return a list of questions.

@@ -30,7 +30,7 @@ public class QuestionDetailsFragment extends Fragment {
     @Override
     public void onCreate (Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mQuestion = new Question("badquestion", false); // TODO: come back and link to question list
+        mQuestion = new Question(); // TODO: come back and link to question list
     }
 
     @Override

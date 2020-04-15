@@ -18,13 +18,9 @@ public class Question {
 
     /**
      * Create a new question.
-     * @param question Resource id for question text.
-     * @param answer Resource id for question answer (true/false).
      */
-    public Question(String question, boolean answer) {
+    public Question() {
         mID = UUID.randomUUID();    // a constructor
-        mQuestion = question;
-        mAnswer = answer;
     }
 
     // Getters & Setters
