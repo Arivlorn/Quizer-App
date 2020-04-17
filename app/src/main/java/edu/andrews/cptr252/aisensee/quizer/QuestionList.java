@@ -3,6 +3,7 @@ package edu.andrews.cptr252.aisensee.quizer;
 import android.content.Context;
 
 import java.util.ArrayList;
+import java.util.UUID;
 
 /**
  * Manage a list of questions. This is a singleton class, so only one
@@ -53,6 +54,19 @@ public class QuestionList {
             sOurInstance = new QuestionList(c.getApplicationContext());
         }
         return sOurInstance;
+    }
+
+    /**
+     * Return the question with a given id.
+     * @param id Unique id for the question.
+     * @return The question object or null if not found.
+     */
+    public Question getQuestion(UUID id) {
+        for (Question question : mQuestions) {
+            if (question.getID().equals(id))
+                return question;
+        }
+        return null;
     }
 
     /**

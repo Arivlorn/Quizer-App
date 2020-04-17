@@ -10,5 +10,5 @@
         android:name="edu.andrews.cptr252.aisensee.quizer.MenuFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout="@layout/quizer_menu" />
+        tools:layout="@layout/menu" />
 </androidx.constraintlayout.widget.ConstraintLayout>

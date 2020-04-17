@@ -1,6 +1,7 @@
 package edu.andrews.cptr252.aisensee.quizer;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +19,12 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.ViewHo
     /** Used to store reference to list of questions */
     private ArrayList<Question> mQuestions;
 
+    /** Key used to pass the id of a specific question. */
+    public static final String EXTRA_QUESTION_ID = "edu.andrews.cptr252.aisensee.quizer.question_id";
+
+    /** Context hosting the view. */
+    public Context mContext;
+
     /**
      * Constructor for QuestionsAdapter. Initialize adapter with given list of questions.
      * @param questions list of questions to display
@@ -25,11 +32,11 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.ViewHo
     public QuestionAdapter(ArrayList<Question> questions) {
         mQuestions = questions;
     }
-
     /**
      * Class to hold references to widgets on a given view.
      */
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+
 
         /** TextView that displays the question. */
         public TextView questionTextView;
@@ -40,6 +47,11 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.ViewHo
 
             // store references to the widget on the view item
             questionTextView = itemView.findViewById(R.id.question_list_item_textView);
+            itemView.setOnClickListener(this);
+
+            // get the context of the view. This will be the activity hosting the view.
+            mContext = itemView.getContext();
+
             itemView.setOnClickListener(this);
         }
 
@@ -56,11 +68,21 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.ViewHo
             // TODO: open the selected question.
             if (position != RecyclerView.NO_POSITION) {
                 Question question = mQuestions.get(position);
+
+                // start an instance of QuestionDetails fragment
+                Intent i = new Intent(mContext, QuestionDetailsActivity.class);
+
+                // pass the id of the question as an extra in the intent
+                i.putExtra(QuestionAdapter.EXTRA_QUESTION_ID, question.getID());
+
+                // actually start the activity
+                mContext.startActivity(i);
+
             }
 
         }
 
-    } // end of viewholder
+    } // end of ViewHolder
 
     /**
      * Create a new view to display a question.

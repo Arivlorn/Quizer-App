@@ -14,7 +14,7 @@ public class MenuActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.quizer_main_menu);
+        setContentView(R.layout.menu);
     }
 
     /** Called when user taps Add Questions button. */
@@ -30,12 +30,12 @@ public class MenuActivity extends AppCompatActivity {
 
     /** Called when user taps Quiz button. */
     public void quizButton(View view) {
-
+        // TODO: 2 Link to quiz mode activity
         // Creates a new intent with the information for context and the class we want to call.
-        Intent intent = new Intent(this, QuizActivity.class);
+        //Intent intent = new Intent(this, .class);
 
         // Starts the new activity.
-        startActivity(intent);
+        //startActivity(intent);
     }
 
 }

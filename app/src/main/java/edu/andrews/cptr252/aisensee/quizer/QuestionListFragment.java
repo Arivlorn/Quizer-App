@@ -64,5 +64,18 @@ public class QuestionListFragment extends Fragment {
 
         // return the view to be created.
         return v;
+
+    }
+
+    /**
+     * Question list fragment was paused (user was most likely editing a question).
+     * Notify the adapter that the data set (Question list) may have changed.
+     * The adapter will then update the changed view.
+     */
+    @Override
+    public void onResume() {
+        super.onResume();   // first execute parent's onResume method
+        mQuestionAdapter.notifyDataSetChanged();    // notify adapter of data change
+
     }
 }

@@ -21,7 +21,7 @@ public class MenuFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.quizer_menu, container, false);
+        View v = inflater.inflate(R.layout.menu, container, false);
         return v;
     }
 
