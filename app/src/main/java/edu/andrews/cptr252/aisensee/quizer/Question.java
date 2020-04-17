@@ -44,6 +44,16 @@ public class Question {
     public void setQuestion(String question) { mQuestion = question; }
 
     /**
+     * Set the question and answer at the same time.
+     * @param question The question.
+     * @param answer The true/false answer.
+     */
+    public void setQuestionAnswer(String question, boolean answer) {
+        mQuestion = question;
+        mAnswer = answer;
+    }
+
+    /**
      * Returns the true/false answer.
      * @return Answer
      */

@@ -22,25 +22,21 @@ public class QuestionList {
 
     /** Constructs the internal question list. */
     private QuestionList(Context appContext) {
+
+        // retrieves context so that it knows where to send things.
         mAppContext = appContext;
         mQuestions = new ArrayList<>();
 
-        // populates list with 2 fake questions.
+        // populates list with 3 sample questions (should only ever happen once, once data is being stored locally)
         Question question1 = new Question();
-        question1.setQuestion("First Bullshit Question");
+        question1.setQuestionAnswer("Is Anthony's app the best?", true);
         mQuestions.add(question1);
         Question question2 = new Question();
-        question2.setQuestion("Second Bullshit Question");
+        question2.setQuestionAnswer("Is the sky orange?", false);
         mQuestions.add(question2);
-
-
-        // populates our list with 100 fake questions
-        /*for (int i = 0; i < 100; i++) {
-            Question question = new Question();
-            question.setQuestion("Test Question");
-            question.setAnswer(true);
-            mQuestions.add(question);
-        }*/
+        Question question3 = new Question();
+        question3.setQuestionAnswer("5 + 5 = 10", true);
+        mQuestions.add(question3);
     }
 
     /**

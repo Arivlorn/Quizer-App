@@ -11,7 +11,11 @@
     <string name="question_list_label">Questions</string>
 
     <!-- Questions Details Strings -->
+    <string name="question_headline">Question</string>
     <string name="title_hint">Enter your question here.</string>
+    <string name="answer_headline">Answer</string>
+    <string name="true_headline">True</string>
+    <string name="false_headline">False</string>
 
 
 </resources>
