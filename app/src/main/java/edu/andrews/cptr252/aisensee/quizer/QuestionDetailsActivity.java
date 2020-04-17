@@ -6,6 +6,7 @@ import java.util.UUID;
 
 /**
  * Activity that hosts a QuestionDetailsFragment
+ * TODO: Consider implementing ViewPager from lab 13
  */
 public class QuestionDetailsActivity extends SingleFragmentActivity {
 

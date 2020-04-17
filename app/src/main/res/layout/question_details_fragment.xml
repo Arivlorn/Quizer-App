@@ -7,7 +7,7 @@
     tools:context=".QuestionDetailsFragment" >
 
     <EditText
-        android:id="@+id/question_question"
+        android:id="@+id/question_EditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
@@ -28,4 +28,27 @@
         android:text="@string/question_headline"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/answer_headline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/answer_headline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/question_EditText" />
+
+    <ToggleButton
+        android:id="@+id/true_false_ToggleButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:text="ToggleButton"
+        android:textOff="@string/false_headline"
+        android:textOn="@string/true_headline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/answer_headline" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,19 +9,23 @@ import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.ToggleButton;
 
 import java.util.UUID;
 
 
 /**
- * A simple {@link Fragment} subclass.
+ * A fragment that allows the user to edit a question details.
  */
 public class QuestionDetailsFragment extends Fragment {
 
-
     /** Reference to title field for question */
     private EditText mQuestionField;
+
+    /** Reference to toggle button for true/false answer */
+    private ToggleButton mToggleButton;
 
     /** Required empty public constructor */
     public QuestionDetailsFragment() {
@@ -71,8 +75,12 @@ public class QuestionDetailsFragment extends Fragment {
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.question_details_fragment, container, false);
 
-        // get a reference to EditText box for question title
-        mQuestionField = v.findViewById(R.id.question_question);
+        //==========================================================================================
+        // Question Question Text Box
+        //==========================================================================================
+
+        // get a reference to EditText box for question question
+        mQuestionField = v.findViewById(R.id.question_EditText);
 
         // set text of question edit text field
         mQuestionField.setText(mQuestion.getQuestion());
@@ -97,6 +105,38 @@ public class QuestionDetailsFragment extends Fragment {
             }
         });
 
+        //==========================================================================================
+        // True/False ToggleButton
+        //==========================================================================================
+
+        // get a reference to true/false toggle button
+        mToggleButton = v.findViewById(R.id.true_false_ToggleButton);
+
+        // set original state of button to true/false based on question answer
+        if (mQuestion.getAnswer() == true) {
+            mToggleButton.setChecked(true);
+        }
+        else{ // (mQuestion.getAnswer() == false)
+            mToggleButton.setChecked(false);    // redundant as default state is unchecked.
+        }
+
+        // listen for state change on the toggle button, and change data based on status.
+        mToggleButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+                // toggle is enabled
+                if(isChecked) {
+                    mQuestion.setAnswer(true);
+                }
+                // toggle is disabled
+                else {
+                    mQuestion.setAnswer(false);
+                }
+            }
+        });
+
+        // return view
         return v;
     }
 

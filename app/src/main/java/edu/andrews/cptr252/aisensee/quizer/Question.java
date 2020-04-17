@@ -13,8 +13,11 @@ public class Question {
     /** Question */
     private String mQuestion;
 
-    /** Answer to question */
-    private boolean mAnswer;
+    /**
+     * Answer to question.
+     * IS SET TO TRUE BY DEFAULT, to avoid possibility of null answer.
+     */
+    private boolean mAnswer = true;
 
     /**
      * Create a new question.
