@@ -17,5 +17,7 @@
     <string name="true_headline">True</string>
     <string name="false_headline">False</string>
 
+    <!-- Add Question Button -->
+    <string name="add_question_button">+</string>
 
 </resources>

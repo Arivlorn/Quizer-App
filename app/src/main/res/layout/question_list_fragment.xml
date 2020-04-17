@@ -15,4 +15,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- TODO: Add formatting for round button. -->
+    <Button
+        android:id="@+id/add_question_button"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="40dp"
+        android:text="@string/add_question_button"
+        android:textAlignment="center"
+        android:textColor="@color/cardview_light_background"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
