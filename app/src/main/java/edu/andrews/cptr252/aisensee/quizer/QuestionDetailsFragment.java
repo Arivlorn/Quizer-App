@@ -140,4 +140,13 @@ public class QuestionDetailsFragment extends Fragment {
         return v;
     }
 
+    /**
+     * Save the question list to a JSON file when app is paused.
+     */
+    @Override
+    public void onPause() {
+        super.onPause();
+        QuestionList.getInstance(getActivity()).saveQuestions();
+    }
+
 }

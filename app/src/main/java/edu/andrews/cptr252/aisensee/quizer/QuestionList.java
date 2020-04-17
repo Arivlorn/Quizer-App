@@ -1,9 +1,12 @@
 package edu.andrews.cptr252.aisensee.quizer;
 
 import android.content.Context;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.UUID;
+
+import static androidx.constraintlayout.widget.Constraints.TAG;
 
 /**
  * Manage a list of questions. This is a singleton class, so only one
@@ -11,7 +14,7 @@ import java.util.UUID;
  */
 public class QuestionList {
 
-    /** Variable for our only instance of Questionist */
+    /** Variable for our only instance of QuestionList */
     private static QuestionList sOurInstance;
 
     /** A list of questions */
@@ -25,18 +28,37 @@ public class QuestionList {
 
         // retrieves context so that it knows where to send things.
         mAppContext = appContext;
-        mQuestions = new ArrayList<>();
 
-        // populates list with 3 sample questions (should only ever happen once, once data is being stored locally)
-        Question question1 = new Question();
-        question1.setQuestionAnswer("Is Anthony's app the best?", true);
-        mQuestions.add(question1);
-        Question question2 = new Question();
-        question2.setQuestionAnswer("Is the sky orange?", false);
-        mQuestions.add(question2);
-        Question question3 = new Question();
-        question3.setQuestionAnswer("5 + 5 = 10", true);
-        mQuestions.add(question3);
+        //==========================================================================================
+        // JSON Serializer stuff, again
+
+        // create our serializer to load and save questions
+        mSerializer = new QuestionJSONSerializer(mAppContext, FILENAME);
+
+        try {
+            // load questions from JSON file, this initializes our list of questions :)
+            mQuestions = mSerializer.loadQuestions();
+        }
+        catch (Exception e) {
+            // unable to load from file, so create empty question list
+            // either file does not exist (which is okay)
+            // or file contains an error (which isn't great)
+            mQuestions = new ArrayList<>();
+
+            // populates list with 3 sample questions (should only ever happen once, once data is being stored locally)
+            Question question1 = new Question();
+            question1.setQuestionAnswer("Is Anthony's app the best?", true);
+            mQuestions.add(question1);
+            Question question2 = new Question();
+            question2.setQuestionAnswer("Is the sky orange?", false);
+            mQuestions.add(question2);
+            Question question3 = new Question();
+            question3.setQuestionAnswer("5 + 5 = 10", true);
+            mQuestions.add(question3);
+        }
+        //==========================================================================================
+
+
     }
 
     /**
@@ -72,11 +94,58 @@ public class QuestionList {
     public void addQuestion(Question q) {
         // adds a question to the question list
         mQuestions.add(q);
+
+        //=========================================================================
+        // JSON
+        // saves questions to file every time a new question is added to the list.=
+        saveQuestions();
+        //=========================================================================
     }
+
+    /**
+     * Add a question to the list at a given position.
+     * @param position is the index that the question should be stored at.
+     * @param question is the question to add.
+     */
+    public void addQuestion(int position, Question question) {
+        mQuestions.add(position, question);     // add the question at position
+        saveQuestions();                        // save the questions to JSON file
+    }
+
+    /**
+     * Remove the question at a certain index from the list.
+     * @param position is the index of the question to be deleted.
+     */
+
 
     /**
      * Return a list of questions.
      * @return array of Question objects
      */
     public ArrayList<Question> getQuestions() { return mQuestions; }
+
+    //==============================================================================================
+    // For writing to JSON file
+    //==============================================================================================
+
+    /** Name of JSON file containing list of questions */
+    private static final String FILENAME = "questions.json";
+
+    /** Reference to JSON serializer for a list of questions */
+    private  QuestionJSONSerializer mSerializer;
+
+    /**
+     * Write question list to JSON file.
+     * @return true if successful, false otherwise.
+     */
+    public boolean saveQuestions() {
+        try {
+            mSerializer.saveQuestions(mQuestions);
+            return true;
+        }
+        catch (Exception e) {
+            return false;
+        }
+    }
+
 }
