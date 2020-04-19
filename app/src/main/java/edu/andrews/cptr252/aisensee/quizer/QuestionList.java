@@ -1,12 +1,10 @@
 package edu.andrews.cptr252.aisensee.quizer;
 
 import android.content.Context;
-import android.util.Log;
+
 
 import java.util.ArrayList;
 import java.util.UUID;
-
-import static androidx.constraintlayout.widget.Constraints.TAG;
 
 /**
  * Manage a list of questions. This is a singleton class, so only one
@@ -116,6 +114,10 @@ public class QuestionList {
      * Remove the question at a certain index from the list.
      * @param position is the index of the question to be deleted.
      */
+    public void deleteQuestion(int position) {
+        mQuestions.remove(position);    // remove the question at index position
+        saveQuestions();                // save updated list to JSON file
+    }
 
 
     /**

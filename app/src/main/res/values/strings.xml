@@ -9,6 +9,7 @@
 
     <!-- Question List Strings -->
     <string name="question_list_label">Questions</string>
+    <string name="empty_question_label">Question not created.</string>
 
     <!-- Questions Details Strings -->
     <string name="question_headline">Question</string>
@@ -19,5 +20,10 @@
 
     <!-- Add Question Button -->
     <string name="add_question_button">+</string>
+
+    <!-- Snackbar Undo -->
+    <string name="undo_option">Undo Delete</string>
+    <string name="deleted_message">%1$s deleted"</string>
+
 
 </resources>

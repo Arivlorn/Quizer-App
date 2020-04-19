@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -51,7 +52,7 @@ public class QuestionListFragment extends Fragment {
         mQuestions = QuestionList.getInstance(getActivity()).getQuestions();
 
         // use our custom question adapter for generating views for each question
-        mQuestionAdapter = new QuestionAdapter(mQuestions);
+        mQuestionAdapter = new QuestionAdapter(mQuestions, getActivity());
     }
 
     @Override
@@ -86,6 +87,15 @@ public class QuestionListFragment extends Fragment {
                 addQuestion();
             }
         });
+
+        //==========================================================================================
+        // For SwipeToDelete
+        //==========================================================================================
+
+        // create and attach touch helper for question swipes
+        SwipeToDelete swipeToDelete = new SwipeToDelete(mQuestionAdapter);
+        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(swipeToDelete);
+        itemTouchHelper.attachToRecyclerView(mRecyclerView);
 
         // return the view to be created.
         return v;
