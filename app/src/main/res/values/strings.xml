@@ -25,5 +25,10 @@
     <string name="undo_option">Undo Delete</string>
     <string name="deleted_message">%1$s deleted"</string>
 
+    <!-- Quiz Mode -->
+    <string name="score_headline">Score:</string>
+    <string name="questions_left_headline">Number Left:</string>
+    <string name="out_of_slash">/</string>
+
 
 </resources>
