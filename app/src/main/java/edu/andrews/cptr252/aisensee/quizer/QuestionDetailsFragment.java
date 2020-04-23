@@ -75,6 +75,9 @@ public class QuestionDetailsFragment extends Fragment {
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.question_details_fragment, container, false);
 
+        // sets the title of action bar
+        getActivity().setTitle(R.string.question_details_actionbar_label);
+
         //==========================================================================================
         // Question Question Text Box
         //==========================================================================================

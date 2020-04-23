@@ -41,8 +41,8 @@ public class QuestionListFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // sets the title of the above bar? TODO: find out
-        getActivity().setTitle(R.string.question_list_label);
+        // sets the title of action bar
+        getActivity().setTitle(R.string.questions_list_actionbar_label);
 
         // assigns an already created (or to be created) question list array to our local mQuestions array.
         // then retrieves all questions (the .getQuestions() part) and makes our local mQuestions equal to

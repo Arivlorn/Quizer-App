@@ -79,7 +79,6 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.ViewHo
             // get index of question that was clicked
             int position = getAdapterPosition();
             // for now, just display the selected question.
-            // TODO: open the selected question.
             if (position != RecyclerView.NO_POSITION) {
                 Question question = mQuestions.get(position);
 

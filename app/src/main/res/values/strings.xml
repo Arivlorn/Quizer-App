@@ -8,10 +8,11 @@
     <string name="to_add_questions">Add Questions</string>
 
     <!-- Question List Strings -->
-    <string name="question_list_label">Questions</string>
+    <string name="questions_list_actionbar_label">Questions</string>
     <string name="empty_question_label">Question not created.</string>
 
     <!-- Questions Details Strings -->
+    <string name="question_details_actionbar_label">Edit Question</string>
     <string name="question_headline">Question</string>
     <string name="title_hint">Enter your question here.</string>
     <string name="answer_headline">Answer</string>
