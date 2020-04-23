@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.ImageButton;
 
 import java.util.ArrayList;
 
@@ -31,7 +31,7 @@ public class QuestionListFragment extends Fragment {
     private QuestionAdapter mQuestionAdapter;
 
     /** Reference to button to add a question. */
-    private Button mAddQuestionButton;
+    private ImageButton mAddQuestionButton;
 
     public QuestionListFragment() {
         // Required empty public constructor

@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -35,10 +35,10 @@ public class QuizFragment extends Fragment {
     private int mQuestionsCorrect;
 
     /** The true button */
-    private Button mTrueButton;
+    private ImageButton mTrueButton;
 
     /** The false button */
-    private Button mFalseButton;
+    private ImageButton mFalseButton;
 
     /** Instance of singleton questions list class */
     private QuestionList mQuestionsListClass;
@@ -75,7 +75,7 @@ public class QuizFragment extends Fragment {
 
         }
 
-        // check to see how many questions are left, as next action is dependent on being done or not
+        // check to see if there are questions are left, as action is dependent on being done or not
         // if there are questions left
         if (mQuestionsLeft != 0) {
 
@@ -83,7 +83,7 @@ public class QuizFragment extends Fragment {
             mQuestionField.setText(mQuestions.get(++i).getQuestion());
 
             // take one away from the number of questions left and update TextView
-            mQuestionsLeftField.setText(Integer.toString(--mQuestionsLeft));
+            mQuestionsLeftField.setText(Integer.toString(--mQuestionsLeft + 1));
 
         }
         // if there are no questions left
@@ -92,9 +92,15 @@ public class QuizFragment extends Fragment {
             // set i to -1 to signify that there are no questions left
             i = -1;
 
+            // set questions left to 0
+            mQuestionsLeftField.setText("0");
+
+            // concatenates and displays final message
+            //String string = (R.string.final_message_part_1 + mQuestionsCorrect + R.string.final_message_part_2 + mQuestions.size() + R.string.final_message_part_3);
+            mQuestionField.setText(getString(R.string.final_message_part_1)
+                    + " " + mQuestionsCorrect + " " + getString(R.string.final_message_part_2)
+                    + " " + mQuestions.size() + " " + getString(R.string.final_message_part_3));
         }
-
-
 
     }
 
@@ -107,6 +113,8 @@ public class QuizFragment extends Fragment {
 
         // add questions from that class to private ArrayList for easy display
         mQuestions = mQuestionsListClass.getQuestions();
+
+
 
     }
 
@@ -149,7 +157,7 @@ public class QuizFragment extends Fragment {
         mQuestionField.setText(mQuestions.get(i).getQuestion());
 
         // set questions left and questions correct text box to initial values
-        mQuestionsLeftField.setText(Integer.toString(mQuestionsLeft));
+        mQuestionsLeftField.setText(Integer.toString(mQuestionsLeft + 1));
         mQuestionsCorrectField.setText(Integer.toString(mQuestionsCorrect));
 
         // true/false button listeners
