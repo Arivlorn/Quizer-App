@@ -8,4 +8,12 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="TrueButton" parent="Widget.AppCompat.ImageButton">
+        <item name="android:backgroundTint">@color/colorTrue</item>
+    </style>
+
+    <style name="FalseButton" parent="Widget.AppCompat.ImageButton">
+        <item name="android:backgroundTint">@color/colorFalse</item>
+    </style>
+
 </resources>

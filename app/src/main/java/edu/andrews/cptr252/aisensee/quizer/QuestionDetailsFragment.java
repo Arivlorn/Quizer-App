@@ -146,6 +146,8 @@ public class QuestionDetailsFragment extends Fragment {
     @Override
     public void onPause() {
         super.onPause();
+
+        // only save questionslist if
         QuestionList.getInstance(getActivity()).saveQuestions();
     }
 

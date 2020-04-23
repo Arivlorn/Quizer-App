@@ -24,7 +24,6 @@
         android:layout_marginEnd="25dp"
         android:layout_marginBottom="25dp"
         android:background="@drawable/round_button"
-        android:text="@string/add_question_button"
         android:textAlignment="center"
         android:textColor="@android:color/background_light"
         android:textSize="30sp"

@@ -90,6 +90,7 @@ public class QuestionList {
      * @param q the question to add.
      */
     public void addQuestion(Question q) {
+
         // adds a question to the question list
         mQuestions.add(q);
 
@@ -144,6 +145,7 @@ public class QuestionList {
      */
     public boolean saveQuestions() {
         try {
+
             mSerializer.saveQuestions(mQuestions);
             return true;
         }
