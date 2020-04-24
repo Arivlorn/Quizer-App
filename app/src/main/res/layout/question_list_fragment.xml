@@ -24,7 +24,7 @@
         android:layout_height="60dp"
         android:layout_marginEnd="25dp"
         android:layout_marginBottom="25dp"
-        android:background="@drawable/round_button"
+        android:background="@drawable/button_custom_round"
         android:textAlignment="center"
         android:textColor="@android:color/background_light"
         android:textSize="30sp"
