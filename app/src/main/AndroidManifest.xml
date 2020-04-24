@@ -3,10 +3,11 @@
     package="edu.andrews.cptr252.aisensee.quizer">
 
     <application
-        android:allowBackup="true"
-        android:icon="@mipmap/quizer_launcher_icon"
         android:label="@string/app_name"
+        android:icon="@mipmap/quizer_launcher_icon"
         android:roundIcon="@mipmap/quizer_launcher_icon_round"
+        android:logo="@mipmap/quizer_launcher_icon_foreground"
+        android:allowBackup="true"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MenuActivity">

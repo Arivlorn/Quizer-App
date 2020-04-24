@@ -9,6 +9,7 @@ import java.util.UUID;
 /**
  * Manage a list of questions. This is a singleton class, so only one
  * one instance of the class may ever be created.
+ * TODO: Add function that automatically removes an empty question or never allows it to be added.
  */
 public class QuestionList {
 
@@ -118,6 +119,10 @@ public class QuestionList {
     public void deleteQuestion(int position) {
         mQuestions.remove(position);    // remove the question at index position
         saveQuestions();                // save updated list to JSON file
+    }
+
+    public void deleteQuestion(UUID uuid) {
+
     }
 
 

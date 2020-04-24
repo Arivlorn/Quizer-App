@@ -35,6 +35,9 @@
     <string name="final_message_part_1">You got</string> <!-- Followed by number of questions correct -->
     <string name="final_message_part_2">out of</string> <!-- Followed by number of questions total -->
     <string name="final_message_part_3">correct!</string> <!-- Final text displayed after total -->
+    <!-- Congratulatory messages -->
+    <string name="congrats_0">Honestly, that was terrible.</string>
+    <string name="congrats_25"></string>
 
     <!-- Accessibility -->
     <string name="true_symbol_description">A true check mark.</string>

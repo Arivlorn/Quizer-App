@@ -16,6 +16,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- TODO: Figure out to set to have multiple states and animated click like normal button -->
     <ImageButton
         android:id="@+id/add_question_button"
         android:src="@drawable/add_symbol_white"
