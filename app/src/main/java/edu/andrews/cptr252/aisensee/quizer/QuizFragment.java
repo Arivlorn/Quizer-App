@@ -1,5 +1,7 @@
 package edu.andrews.cptr252.aisensee.quizer;
 
+import android.animation.ArgbEvaluator;
+import android.animation.ValueAnimator;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 
@@ -58,6 +60,9 @@ public class QuizFragment extends Fragment {
     /** Key for storing index of current question for bundle */
     private static final String KEY_QUESTION_INDEX = "questionIndex";
 
+    /** Background TextView */
+    private TextView mBackground;
+
 
     /** Constructor */
     public QuizFragment() {
@@ -77,11 +82,37 @@ public class QuizFragment extends Fragment {
             // display new number of correct
             mQuestionsCorrectField.setText(Integer.toString(++mQuestionsCorrect));
 
+            // change background color for input feedback
+            int colorFrom = getResources().getColor(R.color.colorTrueFeedback);
+            int colorTo = getResources().getColor(R.color.colorTransparent);
+            ValueAnimator colorAnimation = ValueAnimator.ofObject(new ArgbEvaluator(), colorFrom, colorTo);
+            colorAnimation.setDuration(750); // milliseconds
+            colorAnimation.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+                @Override
+                public void onAnimationUpdate(ValueAnimator animator) {
+                    mBackground.setBackgroundColor((int) animator.getAnimatedValue());
+                }
+            });
+            colorAnimation.start();
+
         }
         // if user entered incorrectly
         else {
 
-            // for now, do nothing
+            // change background color for input feedback
+            int colorFrom = getResources().getColor(R.color.colorFalseFeedback);
+            int colorTo = getResources().getColor(R.color.colorTransparent);
+            ValueAnimator colorAnimation = ValueAnimator.ofObject(new ArgbEvaluator(), colorFrom, colorTo);
+            colorAnimation.setDuration(750); // milliseconds
+            colorAnimation.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+                @Override
+                public void onAnimationUpdate(ValueAnimator animator) {
+                    mBackground.setBackgroundColor((int) animator.getAnimatedValue());
+                }
+            });
+            colorAnimation.start();
+
+            // for now, do nothing else
 
         }
 
@@ -186,6 +217,9 @@ public class QuizFragment extends Fragment {
         // set index
         i = 0;
 
+        // get a reference to background
+        mBackground = v.findViewById(R.id.background_TextView);
+
         //==========================================================================================
         // If Device Rotated
         //==========================================================================================
@@ -227,7 +261,7 @@ public class QuizFragment extends Fragment {
         mTrueButton.setOnClickListener(new View.OnClickListener() {     // true button
             @Override
             public void onClick(View v) {
-                // run getAnswer with user input of true if index != -1
+                // run getAnswer with user input if there are questions left
                 if (i != -1) {
                     checkAnswer(true);
                 }
@@ -236,7 +270,7 @@ public class QuizFragment extends Fragment {
         mFalseButton.setOnClickListener(new View.OnClickListener() {    // false button
             @Override
             public void onClick(View v) {
-                // run getAnswer with user input of false if index != 1
+                // run getAnswer with user input of false if there are questions left
                 if (i != -1) {
                     checkAnswer(false);
                 }

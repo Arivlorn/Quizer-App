@@ -8,6 +8,13 @@
     tools:context=".QuizFragment">
 
     <TextView
+        android:id="@+id/background_TextView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="38dp"
+        tools:layout_editor_absoluteY="100dp" />
+
+    <TextView
         android:id="@+id/question_TextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

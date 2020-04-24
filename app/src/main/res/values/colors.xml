@@ -4,5 +4,8 @@
     <color name="colorPrimaryDark">#141414</color>
     <color name="colorAccent">#000000</color>
     <color name="colorTrue">#207026</color>
+    <color name="colorTrueFeedback">#80207026</color>
     <color name="colorFalse">#9F1818</color>
+    <color name="colorFalseFeedback">#809F1818</color>
+    <color name="colorTransparent">#00000000</color>
 </resources>

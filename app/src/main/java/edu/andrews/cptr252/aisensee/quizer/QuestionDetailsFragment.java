@@ -150,9 +150,9 @@ public class QuestionDetailsFragment extends Fragment {
     public void onPause() {
         super.onPause();
 
-        // only save questionslist if question is not empty
-
+        // save question list
         QuestionList.getInstance(getActivity()).saveQuestions();
+
     }
 
 }

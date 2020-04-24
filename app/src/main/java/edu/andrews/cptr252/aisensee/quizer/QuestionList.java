@@ -70,6 +70,7 @@ public class QuestionList {
         if (sOurInstance == null) {
             sOurInstance = new QuestionList(c.getApplicationContext());
         }
+
         return sOurInstance;
     }
 
@@ -121,8 +122,15 @@ public class QuestionList {
         saveQuestions();                // save updated list to JSON file
     }
 
+    /**
+     * Remove the question with a certain UUID from the list.
+     * @param uuid is the index of the question to be deleted.
+     */
     public void deleteQuestion(UUID uuid) {
-
+        for (Question question : mQuestions) {
+            if (question.getID().equals(uuid))
+                mQuestions.remove(question);
+        }
     }
 
 
