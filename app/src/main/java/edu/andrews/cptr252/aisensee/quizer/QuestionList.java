@@ -63,7 +63,7 @@ public class QuestionList {
     /**
      * Return one and only instance of the question list.
      * If it does not exist, this method creates it.
-     * @param c to eventually be the Application context (See BugList.java)
+     * @param c to eventually be the Application context
      * @return Reference to the question list.
      */
     public static QuestionList getInstance(Context c) {
