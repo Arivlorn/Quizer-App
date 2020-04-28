@@ -1,11 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#1E1E1E</color>
-    <color name="colorPrimaryDark">#141414</color>
-    <color name="colorAccent">#000000</color>
-    <color name="colorTrue">#207026</color>
-    <color name="colorTrueFeedback">#80207026</color>
-    <color name="colorFalse">#9F1818</color>
-    <color name="colorFalseFeedback">#809F1818</color>
+
+    <!-- General colors -->
+    <color name="colorPrimary">@color/colorBlackLess</color>
+    <color name="colorPrimaryDark">@color/colorBlack</color>
+    <color name="colorAccent">@color/colorBlackLeast</color>
+
+    <color name="colorBlack">#000000</color>
+    <color name="colorBlackLess">#141414</color>
+    <color name="colorBlackLeast">#282828</color>
+
     <color name="colorTransparent">#00000000</color>
+
+    <!-- True/False colors -->
+    <color name="colorTrue">#207026</color>
+    <color name="colorTrueDark">#80207026</color>
+    <color name="colorFalse">#9F1818</color>
+    <color name="colorFalseDark">#809F1818</color>
+
+    <!-- Text colors -->
+    <color name="colorTextWhite">#FFFFFF</color>
+    <color name="colorTextBlack">@color/colorBlack</color>
+
 </resources>

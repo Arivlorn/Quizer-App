@@ -83,7 +83,7 @@ public class QuizFragment extends Fragment {
             mQuestionsCorrectField.setText(Integer.toString(++mQuestionsCorrect));
 
             // change background color for input feedback
-            int colorFrom = getResources().getColor(R.color.colorTrueFeedback);
+            int colorFrom = getResources().getColor(R.color.colorTrueDark);
             int colorTo = getResources().getColor(R.color.colorTransparent);
             ValueAnimator colorAnimation = ValueAnimator.ofObject(new ArgbEvaluator(), colorFrom, colorTo);
             colorAnimation.setDuration(750); // milliseconds
@@ -100,7 +100,7 @@ public class QuizFragment extends Fragment {
         else {
 
             // change background color for input feedback
-            int colorFrom = getResources().getColor(R.color.colorFalseFeedback);
+            int colorFrom = getResources().getColor(R.color.colorFalseDark);
             int colorTo = getResources().getColor(R.color.colorTransparent);
             ValueAnimator colorAnimation = ValueAnimator.ofObject(new ArgbEvaluator(), colorFrom, colorTo);
             colorAnimation.setDuration(750); // milliseconds
