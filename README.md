@@ -1,4 +1,4 @@
 # finalproject-Arivlorn
 finalproject-Arivlorn created by GitHub Classroom
 
-Final project for App Dev 2 for Anthony Isensee.
+My final project for an application development class, and my first on-my-own app.
